@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>RegistrationForm_v10 by Colorlib</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- LINEARICONS -->
+    <link rel="stylesheet" href="~/fonts/Linearicons-Free.ttf">
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="~/Content/style.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="inner">
+            <img src="~/Images/image-1.png" alt="" class="image-1">
+            <form name="Form1" action="/Home/Index" method="post">
+                <h3>GENÇLİK KAMPLARI KAYIT FORMU</h3>
+                <div class="form-holder">
+                    <span class="lnr lnr-user"></span>
+                    <input type="text" class="form-control" placeholder="İsim" name="isim" required>
+                </div>
+                <div class="form-holder">
+                    <span class="lnr lnr-user"></span>
+                    <input type="text" class="form-control" name="soyisim" placeholder="Soyisim" required>
+                </div>
+                <div class="form-holder">
+                    <span class="form-holder"></span>
+                    <input type="text" class="form-control" name="kimlik" placeholder="TC Kimlik Numarası"  maxlength="11" required>
+                </div>
+                <div class="form-holder">
+                    <span class="form-label"></span>
+                    <input type="date" class="form-control" name="doğumgünü" placeholder="Doğum Tarihi" required>
+                </div>
+                <div class="form-holder">
+                    <span class="lnr lnr-phone-handset"></span>
+                    <input type="tel" class="form-control" name="telefon" placeholder="Telefon Numarası"  pattern="[0]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required>
+                </div>
+                <div class="form-holder">
+                    <span class="lnr lnr-envelope"></span>
+                    <input type="email" class="form-control" name="mail" placeholder="E-Mail" required>
+                </div>
+                <div class="form-holder">
+                    <span class="lnr lnr-envelope"></span>
+                    <input type="file" class="form-control" name="foto+" placeholder="Fotoğraf" required>
+                </div>
+                <button type="submit" value="submit">
+                    <span>Kayıt Ol</span>
+                </button> <button type="submit" onClick="location.href = '@Url.Action("Create", "Form")'; return false;">
+                    AnaSayfaya Geri Dön
+                </button>
+            </form>
+            <img src="~/Images/image-2.png" alt="" class="image-2">
+        </div>
+
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

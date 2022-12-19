@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="KAMPSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdminKamp">
+          <Key>
+            <PropertyRef Name="KullanıcıId" />
+          </Key>
+          <Property Name="KullanıcıAdı" Type="nvarchar" MaxLength="200" />
+          <Property Name="Şifre" Type="nvarchar" MaxLength="200" />
+          <Property Name="KullanıcıId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kamp">
+          <Key>
+            <PropertyRef Name="Tc" />
+          </Key>
+          <Property Name="İsim" Type="nvarchar" MaxLength="200" />
+          <Property Name="Soyisim" Type="nvarchar" MaxLength="200" />
+          <Property Name="Tc" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="DoğumTarihi" Type="nvarchar" MaxLength="200" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="200" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="200" />
+          <Property Name="Fotoğraf" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <Association Name="FK_AdminKamp_Kamp">
+          <End Role="Kamp" Type="Self.Kamp" Multiplicity="0..1" />
+          <End Role="AdminKamp" Type="Self.AdminKamp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kamp">
+              <PropertyRef Name="Tc" />
+            </Principal>
+            <Dependent Role="AdminKamp">
+              <PropertyRef Name="KullanıcıAdı" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KAMPSModelStoreContainer">
+          <EntitySet Name="AdminKamp" EntityType="Self.AdminKamp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kamp" EntityType="Self.Kamp" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AdminKamp_Kamp" Association="Self.FK_AdminKamp_Kamp">
+            <End Role="Kamp" EntitySet="Kamp" />
+            <End Role="AdminKamp" EntitySet="AdminKamp" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KAMPSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AdminKamp">
+          <Key>
+            <PropertyRef Name="KullanıcıId" />
+          </Key>
+          <Property Name="KullanıcıAdı" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Şifre" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="KullanıcıId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Kamp" Relationship="Self.FK_AdminKamp_Kamp" FromRole="AdminKamp" ToRole="Kamp" />
+        </EntityType>
+        <EntityType Name="Kamp">
+          <Key>
+            <PropertyRef Name="Tc" />
+          </Key>
+          <Property Name="İsim" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Soyisim" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Tc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DoğumTarihi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Fotoğraf" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AdminKamp" Relationship="Self.FK_AdminKamp_Kamp" FromRole="Kamp" ToRole="AdminKamp" />
+        </EntityType>
+        <Association Name="FK_AdminKamp_Kamp">
+          <End Role="Kamp" Type="Self.Kamp" Multiplicity="0..1" />
+          <End Role="AdminKamp" Type="Self.AdminKamp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kamp">
+              <PropertyRef Name="Tc" />
+            </Principal>
+            <Dependent Role="AdminKamp">
+              <PropertyRef Name="KullanıcıAdı" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KAMPSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdminKamp" EntityType="Self.AdminKamp" />
+          <EntitySet Name="Kamp" EntityType="Self.Kamp" />
+          <AssociationSet Name="FK_AdminKamp_Kamp" Association="Self.FK_AdminKamp_Kamp">
+            <End Role="Kamp" EntitySet="Kamp" />
+            <End Role="AdminKamp" EntitySet="AdminKamp" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KAMPSModelStoreContainer" CdmEntityContainer="KAMPSEntities">
+          <EntitySetMapping Name="AdminKamp">
+            <EntityTypeMapping TypeName="KAMPSModel.AdminKamp">
+              <MappingFragment StoreEntitySet="AdminKamp">
+                <ScalarProperty Name="KullanıcıAdı" ColumnName="KullanıcıAdı" />
+                <ScalarProperty Name="Şifre" ColumnName="Şifre" />
+                <ScalarProperty Name="KullanıcıId" ColumnName="KullanıcıId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kamp">
+            <EntityTypeMapping TypeName="KAMPSModel.Kamp">
+              <MappingFragment StoreEntitySet="Kamp">
+                <ScalarProperty Name="İsim" ColumnName="İsim" />
+                <ScalarProperty Name="Soyisim" ColumnName="Soyisim" />
+                <ScalarProperty Name="Tc" ColumnName="Tc" />
+                <ScalarProperty Name="DoğumTarihi" ColumnName="DoğumTarihi" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Fotoğraf" ColumnName="Fotoğraf" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

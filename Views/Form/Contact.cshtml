@@ -1,0 +1,604 @@
+﻿@using WebKamp.Models 
+@model List<Kamp>
+@{
+    ViewBag.Title = "Contact";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+          content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 4 admin, bootstrap 4, css3 dashboard, bootstrap 4 dashboard, AdminWrap lite admin bootstrap 4 dashboard, frontend, responsive bootstrap 4 admin template, Elegant admin lite design, Elegant admin lite dashboard bootstrap 4 dashboard template">
+    <meta name="description"
+          content="Elegant Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Elegant Admin Lite Template by WrapPixel</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/elegant-admin-lite/" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <!-- This page CSS -->
+    <!-- chartist CSS -->
+    <link href="~/Content/morris.css" rel="stylesheet">
+    <!--c3 plugins CSS -->
+    <link href="~/Content/c3.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Content/style3.css" rel="stylesheet">
+    <!-- Dashboard 1 Page CSS -->
+    <link href="~/Content/dashboard1.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="skin-default-dark fixed-layout">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Elegant admin</p>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon --><b>
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="~/Images/meta-logo.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img src="~/Images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text --><span>
+                            <!-- dark Logo text -->
+                            <!-- Light Logo text -->
+                            <img src="~/Images/logo-light-text.png" class="light-logo" alt="homepage" />
+                        </span>
+                    </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto">
+                        <!-- This is  -->
+                        <li class="nav-item hidden-sm-up">
+                            <a class="nav-link nav-toggler waves-effect waves-light"
+                               href="javascript:void(0)"><i class="ti-menu"></i></a>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item search-box">
+                            <a class="nav-link waves-effect waves-dark"
+                               href="javascript:void(0)"><i class="fa fa-search"></i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="fa fa-times"></i></a>
+                            </form>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                                <img src="~/Images/1.jpg" alt="user" class="img-circle" width="30">
+                            </a>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <div class="d-flex no-block nav-text-box align-items-center">
+                <span><img src="~/Images/logo.png" alt="elegant admin template"></span>
+                <a class="waves-effect waves-dark ml-auto hidden-sm-down" href="javascript:void(0)">
+                    <i class="ti-menu"></i>
+                </a>
+                <a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)">
+                    <i class="ti-menu ti-close"></i>
+                </a>
+            </div>
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li>
+                            <a class="waves-effect waves-dark" href="index.html" aria-expanded="false">
+                                <i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false">
+                                <i class="fa fa-user-circle-o"></i><span class="hide-menu">Profil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="table-basic.html" aria-expanded="false">
+                                <i class="fa fa-table"></i><span class="hide-menu"></span>Kayıt Listeleme
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="icon-fontawesome.html" aria-expanded="false">
+                                <i class="fa fa-smile-o"></i><span class="hide-menu"></span>Kayıt Ekleme
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false">
+                                <i class="fa fa-globe"></i><span class="hide-menu"></span>Kayıt Silme
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="pages-blank.html" aria-expanded="false">
+                                <i class="fa fa-bookmark-o"></i><span class="hide-menu"></span>Şifre Değiştir
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="pages-blank.html" aria-expanded="false">
+                                <i class="fa fa-bookmark-o"></i><span class="hide-menu"></span>@Html.ActionLink("Çıkış Yap", "Logout", "Home")
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h4 class="text-themecolor">Dashboard</h4>
+                    </div>
+                    <div class="col-md-7 align-self-center text-right">
+                        <div class="d-flex justify-content-end align-items-center">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                                <li class="breadcrumb-item active">Dashboard</li>
+                            </ol>
+                            <a class="btn btn-success d-none d-lg-block m-l-15"
+                               href="https://wrappixel.com/templates/elegant-admin/"> Upgrade To Pro</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Yearly Sales -->
+                <!-- ============================================================== -->
+                <!--<div class="row">
+        <div class="col-lg-8">
+            <div class="card oh">
+                <div class="card-body">
+                    <div class="d-flex m-b-30 align-items-center no-block">
+                        <h5 class="card-title ">Yearly Sales</h5>
+                        <div class="ml-auto">
+                            <ul class="list-inline font-12">
+                                <li><i class="fa fa-circle text-info"></i> Iphone</li>
+                                <li><i class="fa fa-circle text-primary"></i> Ipad</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="morris-area-chart" style="height: 350px;"></div>
+                </div>
+                <div class="card-body bg-light">
+                    <div class="row text-center m-b-20">
+                        <div class="col-lg-4 col-md-4 m-t-20">
+                            <h2 class="m-b-0 font-light">6000</h2><span class="text-muted">Total sale</span>
+                        </div>
+                        <div class="col-lg-4 col-md-4 m-t-20">
+                            <h2 class="m-b-0 font-light">4000</h2><span class="text-muted">Iphone</span>
+                        </div>
+                        <div class="col-lg-4 col-md-4 m-t-20">
+                            <h2 class="m-b-0 font-light">2000</h2><span class="text-muted">Ipad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Today's Schedule</h5>
+                    <h6 class="card-subtitle">check out your daily schedule</h6>
+                    <div class="steamline m-t-40">
+                        <div class="sl-item">
+                            <div class="sl-left bg-success"> <i class="fa fa-user"></i></div>
+                            <div class="sl-right">
+                                <div class="font-medium">
+                                    Meeting today <span class="sl-date"> 5pm</span>
+                                </div>
+                                <div class="desc">you can write anything </div>
+                            </div>
+                        </div>
+                        <div class="sl-item">
+                            <div class="sl-left bg-info"><i class="fa fa-image"></i></div>
+                            <div class="sl-right">
+                                <div class="font-medium">Send documents to Clark</div>
+                                <div class="desc">Lorem Ipsum is simply </div>
+                            </div>
+                        </div>
+                        <div class="sl-item">
+                            <div class="sl-left">
+                                <img class="img-circle" alt="user"
+                                     src="~/Images/1.jpg">
+                            </div>
+                            <div class="sl-right">
+                                <div class="font-medium">John Doe <span class="sl-date"> 5pm</span></div>
+                                <div class="desc">Call today with gohn doe </div>
+                            </div>
+                        </div>
+                        <div class="sl-item">
+                            <div class="sl-left">
+                                <img class="img-circle" alt="user"
+                                     src="~/Images/2.jpg">
+                            </div>
+                            <div class="sl-right">
+                                <div class="font-medium">
+                                    Go to the Doctor <span class="sl-date">
+                                        5 minutes
+                                        ago
+                                    </span>
+                                </div>
+                                <div class="desc">Contrary to popular belief</div>
+                            </div>
+                        </div>
+                        <div class="sl-item">
+                            <div class="sl-left">
+                                <img class="img-circle" alt="user"
+                                     src="~/Images/3.jpg">
+                            </div>
+                            <div class="sl-right">
+                                <div>
+                                    <a href="#">Tiger Sroff</a> <span class="sl-date">5 minutes ago</span>
+                                </div>
+                                <div class="desc">
+                                    Approve meeting with tiger
+                                    <br><a href="javascript:void(0)"
+                                           class="btn m-t-10 m-r-5 btn-rounded btn-outline-success">Apporve</a>
+                                    <a href="javascript:void(0)"
+                                       class="btn m-t-10 btn-rounded btn-outline-danger">Refuse</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+                <!-- ============================================================== -->
+                <!-- News -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- column -->
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div>
+                                        <h5 class="card-title">GENÇLİK KAMPI BAŞVURU LİSTESİ</h5>
+                                        <h6 class="card-subtitle">LİSTELE </h6>
+                                    </div>
+                                    @*<div class="ml-auto">
+                                <select class="custom-select b-0">
+                                    <option>January</option>
+                                    <option value="1">February</option>
+                                    <option value="2" selected="">March</option>
+                                    <option value="3">April</option>
+                                </select>
+                            </div>*@
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>İSİM</th>
+                                            <th>SOYİSİM</th>
+
+                                            @*<th>TC KİMLİK NO</th>
+                                    <th>TELEFON</th>
+                                    <th>MAİL</th>*@
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+                                        @foreach (var userInfo in Model)
+                                        {
+                                            <tr>
+
+
+                                                <td> @userInfo.İsim </td>
+                                                <td> @userInfo.Soyisim </td>
+                                                <td>
+                                                    <!-- Modal Trigger -->
+                                                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Detay</a>
+                                                </td>
+                                                @*<td> @userInfo.Tc </td>
+                                        <td> @userInfo.Telefon </td>
+                                        <td> @userInfo.Mail </td>*@
+
+
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @* Modal Structure*@
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>İSİM</th>
+                                    <th>SOYİSİM</th>
+                                    <th>MAİL</th>
+                                    <th>TC KİMLİK NO</th>
+                                    <th>TELEFON</th>
+                                    <th>DOĞUM TARİHİ</th>
+                                    <th>FOTOĞRAF</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var userInfo in Model)
+                                {
+                                    <tr>
+
+                                        <td> @userInfo.İsim </td>
+                                        <td> @userInfo.Soyisim </td>
+                                        <td> @userInfo.Mail </td>
+                                        <td> @userInfo.Tc </td>
+                                        <td> @userInfo.Telefon</td>
+                                        <td> @userInfo.DoğumTarihi </td>
+                                        <td> @userInfo.Fotoğraf </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <!-- ==============================================================
+                <!-- To do chat and message -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Feeds</h4>
+                            </div>
+                            <ul class="feeds p-b-20">
+                                <li>
+                                    <div class="bg-info"><i class="fa fa-bell-o"></i></div> Giriş Yapıldı.
+                                    <span class="text-muted">Şimdi</span>
+                                </li>
+                                <li>
+                                    <div class="bg-success"><i class="ti-server"></i></div> Şifre değiştirildi<span class="text-muted">2 Hafta önce</span>
+                                </li>
+                                <li>
+                                    <div class="bg-warning"><i class="ti-shopping-cart"></i></div> Kayıt yapanlar arasında seçim yapıldı.<span class="text-muted">31 Mayıs</span>
+                                </li>
+                                <li>
+                                    <div class="bg-danger"><i class="ti-user"></i></div> Profil resmi değiştirildi.<span class="text-muted">30 Mayıs</span>
+                                </li>
+                                <li>
+                                    <div class="bg-dark"><i class="fa fa-bell-o"></i></div>Kayıt listesi güncellendi.
+                                    <span class="text-muted">27 Mayıs</span>
+                                </li>
+                                <li>
+                                    <div class="bg-info"><i class="fa fa-bell-o"></i></div> Kayıt listesi görüntülendi.
+                                    <span class="text-muted">23 Mart.</span>
+                                </li>
+                                <li>
+                                    <div class="bg-danger"><i class="ti-user"></i></div> Kayıt yapanlar arasında seçim yapıldı.<span class="text-muted">30 Şubat</span>
+                                </li>
+                                <li>
+                                    <div class="bg-dark"><i class="fa fa-bell-o"></i></div> Şifre Değiştirildi.
+                                    <span class="text-muted">27 Şubat</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Messages (5 New)</h5>
+                                <div class="message-box">
+                                    <div class="message-widget message-scroll">
+                                        <!-- Message -->
+                                        <a href="javascript:void(0)">
+                                            <div class="user-img">
+                                                <img src="~/Images/1.jpg" alt="user"
+                                                     class="img-circle"> <span class="profile-status online pull-right"></span>
+                                            </div>
+                                            <div class="mail-contnet">
+                                                <h5>Eren Öztürk</h5> <span class="mail-desc">
+                                                    Lorem Ipsum is simply dummy
+                                                    text of the printing and type setting industry. Lorem Ipsum has
+                                                    been.
+                                                </span> <span class="time">9:30 </span>
+                                            </div>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="javascript:void(0)">
+                                            <div class="user-img">
+                                                <img src="~/Images/2.jpg" alt="user"
+                                                     class="img-circle"> <span class="profile-status busy pull-right"></span>
+                                            </div>
+                                            <div class="mail-contnet">
+                                                <h5>Bayram Çelik</h5> <span class="mail-desc">
+                                                    I've sung a song! See you
+                                                    at
+                                                </span> <span class="time">9:10 </span>
+                                            </div>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="javascript:void(0)">
+                                            <div class="user-img">
+                                                <span class="round">A</span> <span class="profile-status away pull-right"></span>
+                                            </div>
+                                            <div class="mail-contnet">
+                                                <h5>Ayşegül Öztürk</h5> <span class="mail-desc">
+                                                    Simply dummy text of the
+                                                    printing and typesetting industry.
+                                                </span> <span class="time">
+                                                    9:08
+
+                                                </span>
+                                            </div>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="javascript:void(0)">
+                                            <div class="user-img">
+                                                <img src="~/Images/4.jpg" alt="user"
+                                                     class="img-circle"> <span class="profile-status offline pull-right"></span>
+                                            </div>
+                                            <div class="mail-contnet">
+                                                <h5>Selin Özdemir</h5> <span class="mail-desc">
+                                                    Just see the my
+                                                    admin!
+                                                </span> <span class="time">9:02 </span>
+                                            </div>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="javascript:void(0)">
+                                            <div class="user-img">
+                                                <img src="~/Images/1.jpg" alt="user"
+                                                     class="img-circle"> <span class="profile-status online pull-right"></span>
+                                            </div>
+                                            <div class="mail-contnet">
+                                                <h5>Eren Öztürk</h5> <span class="mail-desc">
+                                                    Welcome to the Elite
+                                                    Admin
+                                                </span> <span class="time">9:30</span>
+                                            </div>
+                                        </a>
+                                        <!-- Message -->
+                                        <a href="javascript:void(0)">
+                                            <div class="user-img">
+                                                <img src="~/Images/2.jpg" alt="user"
+                                                     class="img-circle"> <span class="profile-status busy pull-right"></span>
+                                            </div>
+                                            <div class="mail-contnet">
+                                                <h5>Bayram Çelik</h5> <span class="mail-desc">
+                                                    I've sung a song! See you
+                                                    at
+                                                </span> <span class="time">9:10 </span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+        </div>
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap popper Core JavaScript -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="~/Scripts/jquery2.min.js"></script>
+    <!--Wave Effects -->
+    <script src="~/Scripts/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="~/Scripts/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="~/Scripts/custom.min.js"></script>
+    <!-- ============================================================== -->
+    <!-- This page plugins -->
+    <!-- ============================================================== -->
+    <!--morris JavaScript -->
+    <script src="~/Scripts/raphael-min.js"></script>
+    <script src="~/Scripts/morris.min.js"></script>
+    <script src="~/Scripts/jquery.sparkline.min.js"></script>
+    <!--c3 JavaScript -->
+    <script src="~/Scripts/d3.min.js"></script>
+    <script src="~/Scripts/c3.min.js"></script>
+    <!-- Chart JS -->
+    <script src="~/Scripts/dashboard1.js"></script>
+    <!-- Modal Structure -->
+    @*<div id="modal1" class="modal" style="width: 340px; height:440px;">
+        <div class="modal-content">
+       
+        </div>
+
+    </div>*@
+</body>
+
+</html>
+<script>
+    $(document).click(function () {
+        $('.modal').modal();
+    });
+ </script>
